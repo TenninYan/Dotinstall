@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>jQueryの練習</title>
+</head>
+<body>
+  <p>jQueryの練習</p>
+
+  <!-- <ul id="main"> -->
+  <!--   <li>0</li> -->
+  <!--   <li class="item">1</li> -->
+  <!--   <li class="item">2</li> -->
+  <!--   <li> -->
+  <!--     3 -->
+  <!--     <ul id="sub"> -->
+  <!--       <li>3&#45;0</li> -->
+  <!--       <li class="item">3&#45;1</li> -->
+  <!--       <li class="item">3&#45;2</li> -->
+  <!--       <li>3&#45;3</li> -->
+  <!--       <li>3&#45;4</li> -->
+  <!--   </li> -->
+  <!-- </ul> -->
+
+
+  <p><a href="http://google.com"> Google </a></p>
+  <p><a href="http://yahoo.co.jp"> Yahoo </a></p>
+  <p><a href="http://relation-search.tk"> relation search </a></p>
+
+
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <!-- <script src="//code.jquery.com/jquery&#45;migrate&#45;1.2.1.min.js"></script> -->
+
+  <script>
+    $(function(){
+      // $('p').css('color','red');
+      // $('p,#main > .item').css('color','red')
+      // $('#sub > li:gt(1)').css('color','red')
+      // $('#sub').parent().css('color','red')
+      $('a[href="http://google.com"]').parent().css('background','red')
+    });
+  </script>
+</body>
+</html>
