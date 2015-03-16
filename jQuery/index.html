@@ -3,6 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>jQueryの練習</title>
+
+  <style>
+    .myStyle{
+      border:5px solid green;
+      font-size:48px;
+    }
+  </style>
+
 </head>
 <body>
   <p>jQueryの練習</p>
@@ -23,21 +31,104 @@
   <!-- </ul> -->
 
 
-  <p><a href="http://google.com"> Google </a></p>
-  <p><a href="http://yahoo.co.jp"> Yahoo </a></p>
-  <p><a href="http://relation-search.tk"> relation search </a></p>
+  <!-- <a href="http://google.com"> Google </a> -->
+  <!-- <p><a href="http://yahoo.co.jp"> Yahoo </a></p> -->
+  <!-- <p><a href="http://relation&#45;search.tk"> relation search </a></p> -->
 
+  <!-- <input type="text" value="go"></input> -->
+  <!-- <select id="members" name="members"> -->
+  <!--   <option>i</option> -->
+  <!--   <option>my</option> -->
+  <!--   <option>me</option> -->
+  <!--   <option>mine</option> -->
+  <!-- </select> -->
+
+  <button>Add!</button>
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <!-- <script src="//code.jquery.com/jquery&#45;migrate&#45;1.2.1.min.js"></script> -->
 
   <script>
     $(function(){
+      // lesson3
       // $('p').css('color','red');
+
+      // lesson4
       // $('p,#main > .item').css('color','red')
+
+      // lesson5
       // $('#sub > li:gt(1)').css('color','red')
+
+      // lesso6
       // $('#sub').parent().css('color','red')
-      $('a[href="http://google.com"]').parent().css('background','red')
+
+      // lesson7
+      // $('a[href="http://google.com"]').parent().css('background','red')
+
+      // lesson8
+      // $('p').css('color','red').css('background','blue');
+      // console.log($('p').css('color'));
+      // $('p').addClass('myStyle');
+
+      // lesson9
+      // console.log($('a').attr('href'));
+      // $('a').attr('href',"www.google.co.jp");
+
+      // lesson10
+      // $('p').text('just changed');
+      // $('p').html('<b>changed again</b>');
+      // $('input').val('hi');
+      // $('p').empty();
+
+      // lesson11
+      // var li = $('<li>').text('plus');
+      // $('ul > li:eq(1)').before(li);
+      // $('ul').prepend(li);
+
+      // lessn12
+      // $('p').hide();
+      // $('p').toggle();
+
+      // lessn13
+      // $('p')
+      //   .click(function(){
+      //     alert('hi');
+      //   })
+      //   .mouseover(function(){
+      //     $(this).css('background','red');
+      //   })
+      //   .mouseout(function(){
+      //     $(this).css('background','blue');
+      //   })
+      //   .mousemove(function(e){
+      //     $(this).text(e.pageX);
+      //   });
+
+      // lesson14
+      // $('input')
+      // .focus(function(){
+      //   $(this).css('background','blue'); 
+      // })
+      // .blur(function(){
+      //   $(this).css('background','grey');
+      // });
+
+      // $('#members').change(function(){
+      //   alert('changed');
+      // });
+
+      // lesson 15
+      $('button').click(function(){
+        var addtext = $('<p>').text('added').addClass('vanish');
+        $(this).after(addtext);
+      });
+
+      // $('body').on('click','.vanish',function(){
+      //   $(this).empty();
+      // });
+      $('body').on('click', '.vanish',function(){
+        $(this).remove();
+      });
+
     });
   </script>
 </body>
