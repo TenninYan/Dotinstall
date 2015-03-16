@@ -15,6 +15,7 @@
 <body>
   <p>jQueryの練習</p>
 
+  <button id="read_more">Read more</button>
   <!-- <ul id="main"> -->
   <!--   <li>0</li> -->
   <!--   <li class="item">1</li> -->
@@ -43,7 +44,12 @@
   <!--   <option>mine</option> -->
   <!-- </select> -->
 
-  <button>Add!</button>
+  <!-- <button id="add">Add!</button> -->
+
+  <input type="text" id="name"></input>
+  <input type="submit" value="greet" id="greet"></input>
+  <div id="result"></div>
+
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 
@@ -117,18 +123,36 @@
       // });
 
       // lesson 15
-      $('button').click(function(){
-        var addtext = $('<p>').text('added').addClass('vanish');
-        $(this).after(addtext);
-      });
+      // $('#add').click(function(){
+      //   var addtext = $('<p>').text('added').addClass('vanish');
+      //   $(this).after(addtext);
+      // });
 
       // $('body').on('click','.vanish',function(){
       //   $(this).empty();
       // });
-      $('body').on('click', '.vanish',function(){
-        $(this).remove();
-      });
 
+      // lesson17
+      // $('#read_more').click(function(){
+      //   $('#result').load('more.html');
+      // });
+
+      // lesson18
+      // $('#read_more').click(function(){
+      //   $('#result').load('more.html',function(){
+      //     $('#message').css('color','red');
+      //   });
+      // });
+
+      // lesson19,20
+      $('#greet').click(function(){
+        $.get('greet.php',{
+          name: $('#name').val()
+        },function(data){
+          $('#result').html(data.message + '(' + data.length + ')');
+        });
+      });
+      
     });
   </script>
 </body>
